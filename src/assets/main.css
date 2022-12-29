@@ -1,0 +1,15 @@
+@import url('./normalize.css');
+
+@font-face {
+  font-family: Montserrat;
+  src: url('./Montserrat-VariableFont_wght.ttf');
+}
+
+* {
+  font-family: Montserrat;
+  color: white;
+}
+
+button {
+  color: black
+}
