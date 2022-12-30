@@ -6,7 +6,7 @@ export default {
 
 <template>
   <div class="main">
-    <h2>Quotes</h2>
+    <h2>Q.O.T.R.</h2>
   </div>
 </template>
 
