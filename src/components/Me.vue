@@ -1,48 +1,42 @@
 <script>
 export default {
 	name: "Me",
-	data() {
-		return {
-			
-		}
-	},
 }
 </script>
 
 <template>
-	<div class="main">
-			<h1>Welcome to my humble abode!</h1>
-			<h2>My name is Erik Van den Bosch Vidal</h2>
-			<div class="text">
-				<p>
-					A Full Stack Developer that, for better or worse, does not follow common trends... <br>
-					Opting instead to find the most comfortable way for me to do things effectively.<br>
-					<br>
-					I'm creative, adaptable, diligent and a quick learner <br>
-				</p>
-			</div>
+	<div class="Me">
+		<div class="me">
+			<h1>Welcome to my humble abode</h1>
+			<p>I'm Erik Van den Bosch Vidal, a Creative, Adaptable and Quick learning Full Stack Developer in love with Vue.js</p>
+		</div>
+		<div class="img"><img src="../assets/Media/Me.jpg" alt="Me"></div>
 	</div>
 </template>
 
-<style scoped lang='stylus'>
-@import '../variables.styl'
+<style scoped lang='sass'>
+@import '../variables.sass'
 
-	.main
-		position relative
-		padding 10px
+.Me
+	display: grid
+	grid-template-columns: 1fr 500px
 
-		background-color secondary
+	> div
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		gap: 20px
+	p
+		width: 50%
+		text-align: center
+		font-size: 1.5rem
 
-		border-radius 0 br br 0
-		border 2px solid accent
-		border-left 0
-
-		text-align center
-
-	.text
-		padding-top 30px
-
-		& p 
-			line-height 2rem
-			font-size 1.5rem
+	.img
+		height: fit-content
+		width: fit-content
+		margin: auto
+		img
+			height: 450px
+			border-radius: 50%
 </style>

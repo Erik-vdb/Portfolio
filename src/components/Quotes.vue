@@ -1,24 +1,35 @@
 <script>
 export default {
-  name: "Quotes"
+	name: "Quotes",
+	data() {
+		return {
+			quotes: [
+
+			]
+		}
+	},
 }
 </script>
 
 <template>
-  <div class="main">
-    <h2>Q.O.T.R.</h2>
-  </div>
+	<div class="main">
+		<div class="head">
+			<h1><slot></slot></h1>
+			<v-divider color="accent"></v-divider>
+		</div>
+	</div>
 </template>
 
-<style scoped lang='stylus'>
-  @import '../variables.styl';
+<style scoped lang='sass'>
+@import '../variables.sass'
 
-  .main
-    background-color darker
+.main
+	grid-area: 1 / 5 / 4 / 7
 
-    text-align center
+	background-color: $darker
+	text-align: center
+	border: $border
+	border-right: 0
+	border-radius: $br 0 0 $br
 
-    border 1px solid accent
-    border-right 0
-    border-radius br 0 0 br
 </style>

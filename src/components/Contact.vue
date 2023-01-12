@@ -1,49 +1,47 @@
 <script>
 	export default {
-		name: 'Contact'
+		name: 'Contact',
+		data() {
+			return {
+				contact: [
+					{
+						medium: 'Email',
+						link: 'mailto:vandenerik824@gmail.com',
+					},
+					{
+						medium: 'WhatsApp',
+						link: 'https://wa.me/+5491127176301'
+					},
+					{
+						medium: 'Linkedin',
+						link: 'https://www.linkedin.com/in/vdb-erik/'
+					}
+				]
+			}
+		},
 	}
 </script>
 
 <template>
 	<div class="main">
-		<h2>Contact</h2>
-		<div class="content">
-			<div class="left">
-				<div class="Info">
-					<h4>You can contact me via:</h4>
-					<p>Email: <a href="mailto:vandenerik824@gmail.com">vandenerik824@gmail.com</a></p>
-				</div>
-			</div>
-			<div class="rigth">
-				right
-			</div>
+		<div class="head">
+			<h1><slot></slot></h1>
+			<v-divider color="accent"></v-divider>
 		</div>
 	</div>
 </template>
 
-<style scoped lang='stylus'>
-	@import '../variables.styl';
+<style scoped lang='sass'>
+@import '../variables.sass'
 
-	.main
-		background-color secondary
-		text-align center
+.main 
+	grid-area: 11 / 2 / 14 / 7
 
-		border-radius br 0 0 br
-		border 1px solid accent
+	background-color: $darker
+	text-align: center
+	border-radius: $br 0 0 $br
+	border: $border
 
-	.content
-		display flex
-
-		padding 0 20px
-		height 80%
-
-		& div
-			width 50%
-			min-width 30%
-
-
-	.left
-		border-right 1px solid accent
-
+	border-right: 0
 
 </style>

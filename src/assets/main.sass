@@ -1,0 +1,48 @@
+@import ./normalize.css
+@import ../variables
+
+@font-face
+	font-family: Montserrat
+	src: url('./Montserrat-VariableFont_wght.ttf')
+
+
+:root
+	scroll-behavior: smooth
+
+
+*::selection
+	background-color: rgb(146, 33, 78)
+
+
+* 
+	font-family: Montserrat
+
+
+button 
+	color: black
+
+h1, h2, h3, h4, h5, span, p
+	color: $text
+
+
+h1
+	margin: 10px 0
+	color: $textSecondary
+	font-size: 3rem
+	font-style: italic
+
+
+p
+	font-size: 20px
+
+html
+	overflow: scroll
+	overflow-x: hidden
+
+::-webkit-scrollbar
+	width: 5px
+	background-color: $secondaryTransparent
+
+::-webkit-scrollbar-thumb
+	border-radius: 10px
+	background-color: $accent
