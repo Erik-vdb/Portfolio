@@ -1,29 +1,76 @@
 <script>
+	import MongoDB from '../assets/Media/Logos/MongoDB.svg';
+	import Redux from '../assets/Media/Logos/Redux.svg';
+	import Scrum from '../assets/Media/Logos/Scrum.svg';
+	import PSQL from '../assets/Media/Logos/PSQL.svg';
+	import Jquery from '../assets/Media/Logos/Jquery.svg';
 	export default {
 		name: 'Skills',
 		data() {
 			return {
-				skills:[
+				mainSkills:[
 					{
 						name: 'Javascript',
-						prof: 70,
+						ico: 'mdi-nodejs',
+						prof: 80,
 						color: '#dbf54a'
 					},
 					{
-						name: 'Vue.js',
+						name: 'Typescript',
+						ico: 'mdi-language-typescript',
 						prof: 60,
+						color: '#27609e'
+					},
+					{
+						name: 'Vue.js',
+						ico: 'mdi-vuejs',
+						prof: 70,
 						color: '#42ba82'
 					},
 					{
 						name: 'MongoDB',
-						prof: 40,
-						color: '#42ba82'
+						img: MongoDB,
+						prof: 50,
+						color: '#0dc143'
 					},
 					{
 						name: 'React',
+						ico: 'mdi-react',
 						prof: 50,
 						color: '#61dafb'
 					},
+					{
+						name: 'Redux',
+						img: Redux,
+						prof: 70,
+						color: '#7044b8'
+					},
+				],
+				otherSkills: [
+					{
+						name: 'Git',
+						ico: 'mdi-git'
+					},
+					{
+						name: 'Github',
+						ico: 'mdi-github'
+					},
+					{
+						name: 'Scrum',
+						img: Scrum
+					},
+					{
+						name: 'Express'
+					},
+					{
+						name: 'Jquery',
+						img: Jquery
+					},
+					{
+						name: 'Postgresql',
+						img: PSQL
+					}
+
 				]
 			}
 		},
@@ -39,8 +86,18 @@
 					<p>Main</p>
 				</div>
 				<div id="mainSkills">
-					<div class="skill" v-for="(item, index) in skills" :key="index">
-						<v-progress-circular bg-color="transparent" :color="item.color" :model-value="item.prof" size="150" ><p>{{item.name}}</p></v-progress-circular>
+					<div class="skill" v-for="(item, index) in mainSkills" :key="index">
+						<v-progress-circular
+						bg-color="transparent"
+						:color="item.color"
+						:model-value="item.prof"
+						size="150"
+						width="8"
+						rotate="-90"
+						>
+						<v-icon :title="item.name" v-if="item.ico" :icon="item.ico" size="100"/>
+						<img v-else :title="item.name" style="z-index: 5;" :src="item.img" height="100" :alt="item.name">
+					</v-progress-circular>
 					</div>
 				</div>
 			</div>
@@ -48,7 +105,12 @@
 				<div class="verticalText">
 					<p>Other</p>
 				</div>
-				<div id="mainContents">
+				<div id="otherSkills">
+					<div class="skill" v-for="(item, index) in otherSkills" :key="index">
+						<v-icon v-if="item.ico" color="accent" size="60" :icon="item.ico"/>
+						<img v-else-if="item.img" :src="item.img" alt="">
+						<p v-else>{{ item.name }}</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -58,16 +120,16 @@
 <style scoped lang='sass'>
 @import ../variables
 
+h1
+	text-align: center
 #skills
 	display: grid
 	grid-template-columns: 1fr 1fr
 	gap: 20px
-.SkillsContainer
-	background-color: $darker
-	border: 1px solid $accentTransparent
-	
+
+.SkillsContainer	
 	display: grid
-	grid-template-columns: 4rem 1fr
+	grid-template-columns: 4em 1fr
 
 .verticalText
 	display: flex
@@ -80,10 +142,9 @@
 		color: $accent
 		transform: rotate(-90deg)
 
-
 #mainSkills
 	display: grid
-	grid-template-columns: 1fr 1fr
+	grid-template-columns: repeat(3, 1fr)
 	grid-template-rows: 1fr 1fr
 	gap: 50px 0
 	padding: 30px 0
@@ -92,8 +153,26 @@
 		justify-content: center
 		align-items: center
 
+#otherSkills
+	display: flex
+	flex-flow: row wrap
+	gap: 50px
 
+	justify-content: space-around
+	align-items: center
+	> .skill
+		color: $accent
 
+		display: flex
+		justify-content: center
+		align-items: center
 
+		width: 7vw
+		height: 7vw
+		> p
+			color: $accent
+			font-size: 2em
+		> img
+			height: 6em
 
 </style>
