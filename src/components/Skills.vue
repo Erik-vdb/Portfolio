@@ -8,7 +8,7 @@
 		name: 'Skills',
 		data() {
 			return {
-				mainSkills:[
+				mainSkills: [
 					{
 						name: 'Javascript',
 						ico: 'mdi-nodejs',
@@ -85,7 +85,7 @@
 				<div class="verticalText">
 					<p>Main</p>
 				</div>
-				<div id="mainSkills">
+				<div class="" id="mainSkills">
 					<div class="skill" v-for="(item, index) in mainSkills" :key="index">
 						<v-progress-circular
 						bg-color="transparent"
@@ -93,10 +93,9 @@
 						:model-value="item.prof"
 						size="150"
 						width="8"
-						rotate="-90"
 						>
-						<v-icon :title="item.name" v-if="item.ico" :icon="item.ico" size="100"/>
-						<img v-else :title="item.name" style="z-index: 5;" :src="item.img" height="100" :alt="item.name">
+						<v-icon :title="`|-[${item.name}]-|\n[Proficiency: ${item.prof}]`" v-if="item.ico" :icon="item.ico" size="100" />
+						<img  v-else :title="`|-[${item.name}]-|\n[Proficiency: ${item.prof}]`" style="z-index: 5;" :src="item.img" height="100" :alt="item.name">
 					</v-progress-circular>
 					</div>
 				</div>
@@ -107,8 +106,8 @@
 				</div>
 				<div id="otherSkills">
 					<div class="skill" v-for="(item, index) in otherSkills" :key="index">
-						<v-icon v-if="item.ico" color="accent" size="60" :icon="item.ico"/>
-						<img v-else-if="item.img" :src="item.img" alt="">
+						<v-icon :title="item.name" v-if="item.ico" color="accent" size="60" :icon="item.ico"/>
+						<img v-else-if="item.img" :title="item.name" :src="item.img" alt="">
 						<p v-else>{{ item.name }}</p>
 					</div>
 				</div>
@@ -131,6 +130,7 @@ h1
 	display: grid
 	grid-template-columns: 4em 1fr
 
+
 .verticalText
 	display: flex
 	flex-direction: column
@@ -148,6 +148,7 @@ h1
 	grid-template-rows: 1fr 1fr
 	gap: 50px 0
 	padding: 30px 0
+
 	> .skill
 		display: flex
 		justify-content: center

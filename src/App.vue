@@ -13,6 +13,7 @@ export default {
 		NB,
     Me,
 		Skills,
+		Projects
 },
 	data() {
 		return {
@@ -40,6 +41,7 @@ export default {
 		<div id="body">
 			<Me id="Me"></Me>
 			<Skills id="Skills"/>
+			<Projects id="Projects"/>
 		</div>
 
 	</div>
