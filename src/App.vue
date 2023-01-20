@@ -109,4 +109,8 @@ body
 	opacity: 0
 	&.show
 		opacity: 100%
+
+#Projects
+	width: 80vw
+	margin: auto
 </style>

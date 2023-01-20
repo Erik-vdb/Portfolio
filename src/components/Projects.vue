@@ -1,23 +1,91 @@
-<script>
-	export default {
-		name: 'Projects',
-		data() {
-			return {
-				projects: [],
-				dialogData: {},
-				dialog: false,
-			}
-		},
-	}
-
-</script>
-
 <template>
-	<div class='main'>
-		
+	<div id="main">
+		<div class="title">
+			<h1>My Projects</h1>
+		</div>
+
+		<div id="projects">
+			<Project class="project" 
+			v-for="(item, index) in projects" 
+			:key="index" 
+			:="item"/>
+		</div>
 	</div>
 </template>
 
-<style scoped lang='sass'>
+<script>
+	import Project from "./Elements/project.vue";
 
+	export default {
+		name: "Projects",
+		data() {
+			return {
+				projects: [
+					{
+						name: "Finanzas Personales",
+						desc: "A Web App designed with the aim to facilitate the manual management of one’s personal finances. It allows account creation and login with Google Auth and natively and features 2 table views for input and output, Graph Views, Reviews, Admin Tab and other functionalities.",
+						imgSrc: {
+							root: 'FinanzasPersonales',
+							names: [
+							'Portrait',
+							'Ahorro',
+							'Equipo',
+							'Graficos',
+							'Login',
+							'Pagina Principal',
+							'Panel Ingresos',
+							'Premium'
+						]
+						},
+						techStack: [
+						'Typescript',
+						'React',
+						'Redux Toolkit',
+						'MongoDB',
+						'Express',
+					],
+					},
+					{
+						name: "HenryDex",
+						desc: "A Web App that consumed the PokeAPI API to display information about every Pokémon. Additionally, the app allowed the user to create their own Pokémons and store them in a PostgreSQL database.",
+						imgSrc: {
+							root: "HenryDex",
+							names: [
+								'Landing',
+								'Portrait',
+								'Detail',
+								'Creation',
+								'Creation2'
+							]
+						},
+						techStack: [
+							'Javascript',
+							'React',
+							'Redux Toolkit',
+							'PostgreSQL',
+							'Express'
+						]
+					}
+				],
+				dialogData: {},
+				dialog: false,
+			};
+		},
+		components: { Project },
+		methods: {
+			open(data) {
+				this.dialogData = data;
+				this.dialog = true;
+			},
+		},
+	};
+</script>
+
+<style scoped lang="sass">
+@import ../variables
+
+#projects
+	display: flex
+	justify-content: center
+	gap: 20px
 </style>
