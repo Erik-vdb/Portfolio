@@ -19,7 +19,7 @@ export default {
 
 .Me
 	display: grid
-	grid-template-columns: 1fr 500px
+	grid-template-columns: 1fr 35vw
 
 	> div
 		display: flex
@@ -37,6 +37,6 @@ export default {
 		width: fit-content
 		margin: auto
 		img
-			height: 450px
+			width: 30vw
 			border-radius: 50%
 </style>

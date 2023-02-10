@@ -14,7 +14,7 @@
 </template>
 
 <script>
-	import Project from "./Elements/project.vue";
+	import Project from "./project.vue";
 
 	export default {
 		name: "Projects",
@@ -43,7 +43,8 @@
 						'Redux Toolkit',
 						'MongoDB',
 						'Express',
-					],
+						],
+						link: 'http://proyecto-final-lime-beta.vercel.app/'
 					},
 					{
 						name: "HenryDex",
@@ -64,8 +65,29 @@
 							'Redux Toolkit',
 							'PostgreSQL',
 							'Express'
-						]
-					}
+						],
+						link: 'http://henry-dex.vercel.app/'
+					},
+					{
+						name: "Finca Paraiso",
+						desc: "A page to showcase pictures and information for Finca Paraiso. Static page made with Vue.js and deployed to Render",
+						imgSrc: {
+							root: "FincaParaiso",
+							names: [
+								'Portrait',
+								'Headline',
+								'Galeria 1',
+								'Galeria 2',
+								'Contacto'
+							]
+						},
+						techStack: [
+							'Javascript',
+							'Vue',
+							'Vite',
+						],
+						link: 'https://finca-paraiso.onrender.com'
+					},
 				],
 				dialogData: {},
 				dialog: false,
@@ -82,10 +104,12 @@
 </script>
 
 <style scoped lang="sass">
-@import ../variables
+@import ../../variables
 
 #projects
 	display: flex
 	justify-content: center
 	gap: 20px
+
+	overflow-x: auto
 </style>

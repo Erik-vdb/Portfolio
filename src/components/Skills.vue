@@ -60,7 +60,7 @@
 						img: Scrum
 					},
 					{
-						name: 'Express'
+						name: 'Express.js'
 					},
 					{
 						name: 'Jquery',
@@ -81,6 +81,7 @@
 	<div id='main'>
 		<div><h1>My Skills</h1></div>
 		<div id="skills">
+
 			<div class="SkillsContainer">
 				<div class="verticalText">
 					<p>Main</p>
@@ -97,9 +98,11 @@
 						<v-icon :title="`|-[${item.name}]-|\n[Proficiency: ${item.prof}]`" v-if="item.ico" :icon="item.ico" size="100" />
 						<img  v-else :title="`|-[${item.name}]-|\n[Proficiency: ${item.prof}]`" style="z-index: 5;" :src="item.img" height="100" :alt="item.name">
 					</v-progress-circular>
+					<p>{{ item.name }}</p>
 					</div>
 				</div>
 			</div>
+
 			<div class="SkillsContainer">
 				<div class="verticalText">
 					<p>Other</p>
@@ -125,6 +128,12 @@ h1
 	display: grid
 	grid-template-columns: 1fr 1fr
 	gap: 20px
+
+.skill
+	display: flex
+	flex-direction: column
+	p
+		margin: 5px
 
 .SkillsContainer	
 	display: grid

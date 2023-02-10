@@ -1,19 +1,19 @@
 <script>
-import Contact from './components/Contact.vue'
-import Footer from './components/Footer.vue'
+import Contact from './components/Contact/Contact.vue'
 import Me from './components/Me.vue'
 import NB from './components/NB.vue'
-import Projects from './components/Projects.vue'
-import Quotes from './components/Quotes.vue'
+import Projects from './components/Projects/Projects.vue'
+
 import Skills from './components/Skills.vue'
 
 export default {
 	name: 'AppVue',
 	components: {
-		NB,
+    NB,
     Me,
-		Skills,
-		Projects
+    Skills,
+    Projects,
+    Contact
 },
 	data() {
 		return {
@@ -42,6 +42,7 @@ export default {
 			<Me id="Me"></Me>
 			<Skills id="Skills"/>
 			<Projects id="Projects"/>
+			<Contact id="Contact"/>
 		</div>
 
 	</div>
@@ -77,6 +78,7 @@ body
 	> div
 		height: max(80vh, 700px)
 		padding: 30px
+		width: 100%
 
 #NB
 	width: 100%
@@ -89,6 +91,14 @@ body
 #NB.scrolled
 	position: fixed
 	top: 0
+
+#Projects
+	width: 80vw
+	margin: auto
+
+#Contact
+	height: 30vh !important
+
 
 .goToTop
 	display: flex
@@ -106,11 +116,13 @@ body
 
 	transition-property: opacity
 	transition-duration: 300ms
+	
 	opacity: 0
+	pointer-events: none
 	&.show
 		opacity: 100%
+		pointer-events: all
 
-#Projects
-	width: 80vw
-	margin: auto
+
+
 </style>

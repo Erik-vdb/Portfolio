@@ -5,7 +5,8 @@
 				name: String,
 				desc: String,
 				imgSrc: Object,
-				techStack: Array
+				techStack: Array,
+				link: String
 		},
 		data() {
 			return {
@@ -39,7 +40,7 @@
 	<v-dialog v-model="dialog" transition="dialog-transition">
 			<div class="dialogContent">
 				<div class="info">
-					<div class="title"><h1>{{ name }}</h1></div>
+					<div class="title"><a target="_blank" :href="link"><h1>{{ name }}</h1></a></div>
 					<div class="desc"> <p>{{ desc }}</p></div>
 					<div class="tech">
 						<div class="title"><h4>Tech Stack</h4></div>
@@ -77,13 +78,15 @@
 	border: $borderTransparent
 	border-radius: $br
 
+	flex-shrink: 0
+
 	display: flex
 	flex-direction: column
 	justify-content: space-around
 	align-items: center
 
-	width: min(400px, 30vw)
-	height: min(400px, 30vw)
+	width: 400px
+	height: 400px
 	padding: 20px
 
 	transition: background-color 200ms
